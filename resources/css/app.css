@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+    --color-primary-dark: #8A1846;
+    --color-primary: #B02B5C;
+    --color-pink: #FFA7C0;
+    --color-magenta-soft: #F0A5F0;
+    --color-periwinkle: #DCE0FB;
+    --color-indigo: #3F4A9E;
+    --color-success: #22C55E;
+    --color-success-soft: #DCFCE7;
+    --color-danger: #FF6B81;
+    --color-neutral: #E5E7EF;
+    --color-page: #F8F9FE;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #F1F2F8;
+    --color-ink: #2B2D42;
+    --color-muted: #6B7080;
+
+    --radius-modal: 40px;
+    --shadow-soft: 0 16px 48px rgb(63 74 158 / 8%);
+    --shadow-primary: 0 12px 28px rgb(176 43 92 / 24%);
+}
+
+@layer base {
+    html {
+        @apply min-h-full bg-page font-sans text-ink antialiased;
+    }
+
+    body {
+        @apply min-h-screen bg-page;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        @apply font-sans;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+        @apply outline-none ring-4 ring-pink/50;
+    }
+}
+
+@layer components {
+    .field-control {
+        @apply w-full rounded-full bg-surface-alt px-5 py-3 text-sm text-ink placeholder:text-muted/70 transition focus:ring-4 focus:ring-pink/50;
+    }
+
+    .icon-button {
+        @apply inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-surface-alt text-muted transition hover:bg-periwinkle hover:text-indigo focus:ring-4 focus:ring-pink/50;
+    }
+
+    .page-title {
+        @apply text-3xl font-extrabold tracking-tight text-ink sm:text-4xl;
+    }
+
+    .section-label {
+        @apply text-xs font-bold uppercase tracking-[0.16em] text-muted;
+    }
+}
